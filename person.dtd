@@ -1,1 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT person (personid,firstname,lastname,phonenumber,wishlistid,accountid)>
+<!ELEMENT personid (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT phonenumber (#PCDATA)>
+<!ELEMENT wishlistid (#PCDATA)>
+<!ELEMENT accountid (#PCDATA)>

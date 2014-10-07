@@ -23,37 +23,33 @@ import org.xml.sax.SAXParseException;
 public class ValidationDriver {
 
 	public static void main(String[] args) {
+		//Schema
 		boolean flag = true;
-		
 		try {
-			validateWithSchema("person.xml","person.xsd");
+			validateWithSchema("account.xml","account.xsd");
 		} catch (SAXException e) {
 			flag = false;
 		} catch (IOException e) {
 			flag = false;
 		}
 		
-		System.out.println(flag);
+		System.out.println("XML and Schema "+flag);
 		
 		
 		// DTD
-		
+		flag = true;
 		try {
-			validateWithDTD("person.xml");
+			validateWithDTD("account.xml");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			flag = false;
 		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			flag = false;
 		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			flag = false;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			flag = false;
 		}
-		
+		System.out.println("XML and DTD "+flag);
 	}
 	
 	public static void validateWithSchema(String xmlFile, String validationFile) throws SAXException, IOException{
